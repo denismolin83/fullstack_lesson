@@ -1,7 +1,7 @@
 from fastapi import FastAPI
+from src.router import router as router_crypto
 
 app = FastAPI()
 
-@app.get("/cry")
-def read_root():
-    return {"Hello": "World"}
+app.include_router(router_crypto)
+
